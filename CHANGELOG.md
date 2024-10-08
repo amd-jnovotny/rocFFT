@@ -5,10 +5,12 @@ Documentation for rocFFT is available at
 
 ## rocFFT 1.0.31 for ROCm 6.3.0
 
-### Additions
+### Added
 
+* rocfft-test now includes a --smoketest option.
+* Support for the gfx1151, gfx1200, and gfx1201 architectures.
 * Implemented experimental APIs to allow computing FFTs on data
-  distributed across multiple MPI ranks, enabled with the
+  distributed across multiple MPI ranks. These APIS can be enabled with the
   `ROCFFT_MPI_ENABLE` CMake option.  This option defaults to `OFF`.
 
   When `ROCFFT_MPI_ENABLE` is `ON`:
@@ -22,12 +24,10 @@ Documentation for rocFFT is available at
   * An MPI library with ROCm acceleration enabled is required at
     build time and at runtime.
 
-### Changes
+### Changed
 
-* Compile with amdclang++ instead of hipcc.
-* Add --smoketest option to rocfft-test.
-* Support gfx1151, gfx1200, and gfx1201 architectures.
-* Replace Boost Program Options with CLI11 as the command line parser for clients and samples.
+* Compilation uses amdclang++ instead of hipcc.
+* CLI11 replaces Boost Program Options as the command line parser for clients and samples.
 
 ## rocFFT 1.0.30 for ROCm 6.2.4
 
